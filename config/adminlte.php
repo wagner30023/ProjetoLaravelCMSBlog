@@ -240,15 +240,20 @@ return [
         [
             'text'        => 'Meus usuários',
             'url'         => 'painel/users',
+            'icon'        => 'far fa-fw fa-file',
+            'can'         => 'edit-users'
+        ],
+        ['header' => 'Configurações'],
+        [
+            'text'        => 'Configurações do Site',
+            'url'         => 'painel/settings',
             'icon'        => 'far fa-fw fa-file'
         ],
-        ['header' => 'account_settings'],
-
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
+            'text'        => 'Meu perfil',
+            'url'         => 'painel/profile',
+            'icon'        => 'far fa-fw fa-user'
+        ]
     ],
 
     /*
