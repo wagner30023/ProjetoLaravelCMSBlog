@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Setting;
+use Hamcrest\Core\Set;
 use Illuminate\Support\Facades\Validator;
 
 class SettingController extends Controller
@@ -43,10 +44,15 @@ class SettingController extends Controller
         }
 
         // salvar
+        foreach ($data as $item => $value){
+            Setting::where('name', $item)
+                ->update([
+                    'content' => $value
+                ]);
+        }
 
-        echo "salvando";
-
-        // return redirect()->route('settings');
+        return redirect()->route('settings')
+            ->with('warning',' Informações alteradas com sucesso!');;
 
     }
 
