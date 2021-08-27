@@ -22,6 +22,7 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         $pages = Page::paginate(10);
@@ -37,6 +38,7 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         return view('admin.pages.create');
@@ -48,6 +50,7 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         $data = $request->only([
@@ -88,7 +91,7 @@ class PageController extends Controller
 
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -97,9 +100,18 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
-        //
+        $page = Page::find($id);
+
+        if($page){
+            return view('admin.pages.edit',[
+                'page' => $page
+            ]);
+        }
+
+        return redirect()->route('pages.index');
     }
 
     /**
@@ -109,9 +121,51 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
-        //
+        $page = Page::find($id);
+
+        if($page){
+            $data = $request->only([
+                'title',
+                'body'
+            ]);
+
+            if($page['title'] !== $data['title']){
+                $data['slug'] = Str::slug($data['title'],'-');
+
+                $validator = Validator::make($data,[
+                    'title' => ['required','string','max:100'],
+                    'body'  => ['string'],
+                    'slug'  => ['required','string','max:100','unique:pages']
+                ]);
+            } else {
+                $validator = Validator::make($data,[
+                    'title' => ['required','string','max:100'],
+                    'body' => ['string']
+                ]);
+            }
+
+            if($validator->fails()){
+                return redirect()->route('pages.edit',[
+                    'page' => $id
+                ])
+                ->withErrors($validator)
+                ->withInput();
+            }
+
+            $page->title = $data['title'];
+            $page->body = $data['body'];
+
+            if(!empty($data['slug'])) {
+                $page->slug = $data['slug'];
+            }
+
+            $page->save();
+            
+        }
+        return redirect()->route('pages.index');
     }
 
     /**
@@ -120,6 +174,7 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         $page = Page::find($id);
