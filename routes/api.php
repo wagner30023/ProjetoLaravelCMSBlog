@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/imageupload',function(Request $request){
+    return [
+        'location' => 'https://www.google.com.br/google.jpg'
+    ];
+})->name('imageupload');
