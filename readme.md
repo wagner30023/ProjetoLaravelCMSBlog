@@ -30,14 +30,14 @@ A conta admin já está criada, para fazer login digite: admin@admin.com e senha
 ```bash
 
   # clonar repositório
-  git clone https://github.com/moraes-luciano/LaravelCMS
+  git clone https://github.com/wagner30023/laravelCMS
 
 ```
 ## Autor
 
-  Luciano P. Peixoto de Moraes
+  Carlos Wagner Pereira de Morais
   \
-  LinkdeIn:https://www.linkedin.com/in/luciano-moraes-7b56221aa
+  LinkdeIn:https://www.linkedin.com/in/carlos-wagner-p-morais-418571b7/
   \
-  E-mail: pmoraes.luciano@gmail.com
+  E-mail: wagner30023@gmail.com
   
