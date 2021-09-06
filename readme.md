@@ -2,7 +2,7 @@
 
 ## Sobre o projeto
 
-Este é um CMS desenvolvido durante o curso de Laravel com a B7Web, com ele é possível criar posts reais com um editor de texto richText e a possibilidade de incluir fotos. Ele possui dois tipos de contas, uma de admin com acesso total ao CMS e outra de usuário com acesso parcial das funcionalidades. Além disso, ele está com o banco de dados e o front-end preparado para receber funcionalidades diferentes do admin-lte, como resultados gráficos e contagem de visitantes. 
+Este é um CMS desenvolvido com a B7Web, com ele é possível criar posts reais com um editor de texto richText e a possibilidade de incluir fotos. Ele possui dois tipos de contas, uma de admin com acesso total ao CMS e outra de usuário com acesso parcial das funcionalidades. Além disso, ele está com o banco de dados e o front-end preparado para receber funcionalidades diferentes do admin-lte, como resultados gráficos e contagem de visitantes. 
 
 ## Conheça suas funcionalidades
 
