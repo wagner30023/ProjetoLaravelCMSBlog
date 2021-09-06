@@ -64,7 +64,7 @@ class HomeController extends Controller
 
         $pageLabels = json_encode(array_keys($pagePie));
         $pageValues = json_encode(array_values($pagePie));
-        
+
 
         return view('admin.home',[
             'visitsCount'  => $visitsCount,
@@ -72,7 +72,7 @@ class HomeController extends Controller
             'pageCount'    => $pageCount,
             'userCount'    => $userCount,
             'pageLabels'   => $pageLabels,
-            'pageValues'   => $pageValues, 
+            'pageValues'   => $pageValues,
             'dateInterval' => $interval
         ]);
     }
