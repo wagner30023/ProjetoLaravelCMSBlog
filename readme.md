@@ -23,9 +23,8 @@ Este é um CMS desenvolvido durante o curso de Laravel com a B7Web, com ele é p
 
 ### Pré-requisitos: PHP 7.4
 
-Banco de Dados: O arquivo está disponibilizado com o nome laravelcms.sql no diretório principal.
+Banco de Dados: O arquivo está disponibilizado com o nome laravelcms.sql no diretório principal folder SQL.
 
-A conta admin já está criada, para fazer login digite: admin@admin.com e senha admin
 
 ```bash
 
